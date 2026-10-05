@@ -192,7 +192,7 @@ class AdminContentController extends Controller
                 'start_date' => ['sometimes', 'nullable', 'date_format:Y-m-d'],
                 'end_date' => ['sometimes', 'nullable', 'date_format:Y-m-d', 'after_or_equal:start_date'],
                 'is_active' => ['sometimes', 'boolean'], 'sort_order' => ['sometimes', 'integer', 'min:0'],
-                'image' => ['sometimes', 'nullable', 'image', 'mimes:jpg,jpeg,png,webp,gif', 'max:51200'],
+                'image' => [$updating ? 'sometimes' : 'required', 'image', 'mimes:jpg,jpeg,png,webp,gif', 'max:51200'],
             ],
             'achievements' => [
                 'employee_name' => [$required, 'string', 'max:255'], 'division' => [$required, 'string', 'max:255'],

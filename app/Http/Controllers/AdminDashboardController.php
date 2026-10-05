@@ -2,58 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class AdminDashboardController
 {
-    public function index(): View
+    public function index(): RedirectResponse
     {
-        return view('app', ['page' => 'admin/dashboard', 'props' => ['title' => 'Dashboard']]);
+        return redirect()->route('admin.stocks');
     }
 
-    public function section(string $section): View
+    public function stocks(): View
     {
-        $titles = [
-            'promotions' => 'Info Promosi',
-            'achievements' => 'Achievement',
-            'live-hosts' => 'Jadwal Host Live',
-            'birthdays' => 'Birthday',
-            'hosts' => 'Daftar Host',
-            'channels' => 'Channel Live',
-            'weekly-meetings' => 'Weekly Meeting',
-            'display-preview' => 'Preview Display',
-        ];
-
-        abort_unless(isset($titles[$section]), 404);
-
-        return view('app', [
-            'page' => $section === 'display-preview' ? 'admin/preview' : 'admin/resource',
-            'props' => ['title' => $titles[$section], 'resource' => $section],
-        ]);
+        return view('app', ['page' => 'admin/stocks', 'props' => ['title' => 'Stock']]);
     }
 
-    public function liveHostBoard(): View
+    public function promotions(): View
     {
-        return view('app', ['page' => 'admin/live-hosts', 'props' => ['title' => 'Jadwal Host Live']]);
+        return view('app', ['page' => 'admin/promotions', 'props' => ['resource' => 'promotions', 'title' => 'Promo']]);
     }
 
-    public function create(string $resource): View
+    public function createPromotion(): View
     {
-        return $this->form($resource, null);
+        return view('app', ['page' => 'admin/promotion-form', 'props' => ['resource' => 'promotions', 'title' => 'Promo']]);
     }
 
-    public function edit(int $id, string $resource): View
+    public function editPromotion(int $promotion): View
     {
-        return $this->form($resource, $id);
-    }
-
-    private function form(string $resource, ?int $id): View
-    {
-        $titles = ['promotions' => 'Info Promosi', 'achievements' => 'Achievement', 'birthdays' => 'Birthday', 'hosts' => 'Daftar Host', 'channels' => 'Channel Live', 'weekly-meetings' => 'Weekly Meeting'];
-        abort_unless(isset($titles[$resource]), 404);
-
-        return view('app', ['page' => 'admin/form', 'props' => [
-            'title' => $titles[$resource], 'resource' => $resource, 'recordId' => $id,
-        ]]);
+        return view('app', ['page' => 'admin/promotion-form', 'props' => ['resource' => 'promotions', 'title' => 'Promo', 'recordId' => $promotion]]);
     }
 }

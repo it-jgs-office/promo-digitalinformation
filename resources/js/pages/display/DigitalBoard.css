@@ -110,6 +110,312 @@ border: 1px solid #7c63f0a6;
     margin: 0;
 }
 
+.stock-board {
+    display: block;
+    padding: 8px;
+}
+
+.stock-board:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 50% 40%, #36c8ff5c 0, transparent 42%),
+        linear-gradient(135deg, #0877d7 0%, #078feb 48%, #08a9e9 100%);
+}
+
+.stock-board.division-monkey:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 50% 35%, #c6fff33b 0, transparent 45%),
+        linear-gradient(135deg, #00a88d 0%, #06c8aa 48%, #04ad91 100%);
+}
+
+.stock-board.division-johen-mlbb:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 48% 35%, #d7ffff75 0, transparent 43%),
+        linear-gradient(135deg, #12c9e4 0%, #08b9e6 46%, #1599eb 100%);
+}
+
+.stock-board.division-johen-fc-mobile:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 50% 36%, #edffd46b 0, transparent 42%),
+        linear-gradient(135deg, #139c43 0%, #4acb45 46%, #078a39 100%);
+}
+
+.stock-board.division-johen-free-fire:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 50% 36%, #ffb0a459 0, transparent 42%),
+        linear-gradient(135deg, #a40e24 0%, #ef1d2d 48%, #bd1029 100%);
+}
+
+.stock-board.division-johen-valorant:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 50% 36%, #11c8d632 0, transparent 44%),
+        linear-gradient(135deg, #053a46 0%, #075b67 48%, #062d3b 100%);
+}
+
+.stock-board.division-johen-e-football:not(.promotion-board) {
+    background:
+        radial-gradient(ellipse at 50% 36%, #95b8ff45 0, transparent 43%),
+        linear-gradient(135deg, #101fc0 0%, #1649f4 48%, #111caa 100%);
+}
+
+.stock-board:not(.promotion-board)::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, #d4f8ff85 1px, transparent 1.6px),
+        repeating-linear-gradient(132deg, transparent 0 5.5rem, #c8f5ff12 5.6rem 5.8rem, transparent 5.9rem 9rem),
+        linear-gradient(120deg, transparent 0 12%, #71d9ff20 12.1% 12.4%, transparent 12.5% 87%, #71d9ff20 87.1% 87.4%, transparent 87.5%);
+    background-position: right 5% top 8%, center, center;
+    background-size: 1.1rem 1.1rem, auto, auto;
+    mask-image: linear-gradient(90deg, #000 0%, #000 18%, transparent 45%, transparent 55%, #000 82%, #000 100%);
+    pointer-events: none;
+    content: "";
+}
+
+.stock-board.division-monkey:not(.promotion-board)::before {
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 5.8rem, #e0fff329 5.9rem 6rem, transparent 6.1rem 9rem),
+        repeating-linear-gradient(0deg, transparent 0 5.8rem, #e0fff329 5.9rem 6rem, transparent 6.1rem 9rem),
+        radial-gradient(circle, #d4fff49c 1px, transparent 1.7px);
+    background-size: auto, auto, 1.15rem 1.15rem;
+    mask-image: linear-gradient(180deg, #000 0%, #000 12%, #0009 60%, #000 100%);
+}
+
+.stock-board.division-johen-mlbb:not(.promotion-board)::before {
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 5.8rem, #e8ffff42 5.9rem 6rem, transparent 6.1rem 9rem),
+        repeating-linear-gradient(0deg, transparent 0 5.8rem, #e8ffff42 5.9rem 6rem, transparent 6.1rem 9rem),
+        radial-gradient(circle, #d4fbff9c 1px, transparent 1.7px),
+        repeating-linear-gradient(135deg, transparent 0 7rem, #ffffff15 7.1rem 7.3rem, transparent 7.4rem 12rem);
+    background-size: auto, auto, 1.15rem 1.15rem, auto;
+    mask-image: linear-gradient(180deg, #000 0%, #000 12%, #0009 60%, #000 100%);
+}
+
+.stock-board.division-johen-fc-mobile:not(.promotion-board)::before {
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 5.8rem, #edffe642 5.9rem 6rem, transparent 6.1rem 9rem),
+        repeating-linear-gradient(0deg, transparent 0 5.8rem, #edffe642 5.9rem 6rem, transparent 6.1rem 9rem),
+        radial-gradient(circle, #e5ffb99c 1px, transparent 1.7px),
+        repeating-linear-gradient(135deg, transparent 0 6rem, #f6ffe61c 6.1rem 6.3rem, transparent 6.4rem 11rem);
+    background-size: auto, auto, 1.15rem 1.15rem, auto;
+    mask-image: linear-gradient(180deg, #000 0%, #000 12%, #0009 60%, #000 100%);
+}
+
+.stock-board.division-johen-free-fire:not(.promotion-board)::before {
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 5.8rem, #ffe4df42 5.9rem 6rem, transparent 6.1rem 9rem),
+        repeating-linear-gradient(0deg, transparent 0 5.8rem, #ffe4df42 5.9rem 6rem, transparent 6.1rem 9rem),
+        radial-gradient(circle, #ffc6bc9c 1px, transparent 1.7px),
+        repeating-linear-gradient(135deg, transparent 0 6rem, #ffebe51c 6.1rem 6.3rem, transparent 6.4rem 11rem);
+    background-size: auto, auto, 1.15rem 1.15rem, auto;
+    mask-image: linear-gradient(180deg, #000 0%, #000 12%, #0009 60%, #000 100%);
+}
+
+.stock-board.division-johen-valorant:not(.promotion-board)::before {
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 5.8rem, #59e9e82e 5.9rem 6rem, transparent 6.1rem 9rem),
+        repeating-linear-gradient(0deg, transparent 0 5.8rem, #59e9e82e 5.9rem 6rem, transparent 6.1rem 9rem),
+        radial-gradient(circle, #51e9e89c 1px, transparent 1.7px),
+        repeating-linear-gradient(135deg, transparent 0 6rem, #25d9e51c 6.1rem 6.3rem, transparent 6.4rem 11rem);
+    background-size: auto, auto, 1.15rem 1.15rem, auto;
+    mask-image: linear-gradient(180deg, #000 0%, #000 12%, #0009 60%, #000 100%);
+}
+
+.stock-board.division-johen-e-football:not(.promotion-board)::before {
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 5.8rem, #d5e1ff30 5.9rem 6rem, transparent 6.1rem 9rem),
+        repeating-linear-gradient(0deg, transparent 0 5.8rem, #d5e1ff30 5.9rem 6rem, transparent 6.1rem 9rem),
+        radial-gradient(circle, #cfddff9c 1px, transparent 1.7px),
+        repeating-linear-gradient(135deg, transparent 0 6rem, #f5d64c1b 6.1rem 6.3rem, transparent 6.4rem 11rem);
+    background-size: auto, auto, 1.15rem 1.15rem, auto;
+    mask-image: linear-gradient(180deg, #000 0%, #000 12%, #0009 60%, #000 100%);
+}
+
+.stock-board.promotion-board {
+    padding: 0;
+}
+
+.promotion-fullscreen-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.promotion-fullscreen-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stock-board .display-stage,
+.stock-display {
+    width: 100%;
+    height: 100%;
+}
+
+.stock-board:not(.promotion-board) .display-stage {
+    z-index: 1;
+}
+
+.stock-division-tag { width: fit-content; padding: .18rem .42rem; border-radius: 99px; color: #326b9c; background: #eaf5ff; font-size: .61rem; font-weight: 800; letter-spacing: .04em; }
+
+.stock-display {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stock-heading {
+    position: relative;
+    display: flex;
+    min-height: 5rem;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    padding: 1rem .35rem .65rem;
+}
+
+.stock-heading h1 {
+    min-width: 0;
+    margin: 0;
+    color: #fff;
+    font-family: "BoardofDirectorsW00-Rg", var(--board-font);
+    font-size: clamp(1.8rem, 3.4vw, 3.25rem);
+    line-height: 1.1;
+    text-align: center;
+    overflow-wrap: anywhere;
+    text-shadow: 0 .18rem .8rem #03488bb3;
+}
+
+.monitor-wrap {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.monitor-frame {
+    position: relative;
+    display: flex;
+    width: min(100%, calc((100dvh - 8rem) * 16 / 9));
+    max-height: calc(100% - 2.25rem);
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    flex: 0 1 auto;
+    padding: clamp(.45rem, 1vw, .9rem);
+    border: 1px solid #7de8ff;
+    border-radius: clamp(.8rem, 1.8vw, 1.5rem);
+    background: linear-gradient(145deg, #526b82 0%, #1c3147 18%, #101827 78%, #3b6179 100%);
+    box-shadow: 0 1.5rem 4rem #00376385, 0 0 0 .28rem #2ed5ff57, 0 0 1.6rem #49dcff75, inset 0 1px 0 #ffffff66, inset 0 -2px 5px #000a;
+}
+
+.division-monkey .monitor-frame {
+    border-color: #8bf9e4;
+    box-shadow: 0 1.5rem 4rem #00483e85, 0 0 0 .28rem #4effd257, 0 0 1.6rem #49ffdc75, inset 0 1px 0 #ffffff66, inset 0 -2px 5px #000a;
+}
+
+.division-johen-mlbb .monitor-frame {
+    border-color: #a6fbff;
+    box-shadow: 0 1.5rem 4rem #00527685, 0 0 0 .28rem #60edff57, 0 0 1.6rem #79f3ff85, inset 0 1px 0 #ffffff75, inset 0 -2px 5px #000a;
+}
+
+.division-johen-fc-mobile .monitor-frame {
+    border-color: #caff9b;
+    box-shadow: 0 1.5rem 4rem #174d1885, 0 0 0 .28rem #91ff5757, 0 0 1.6rem #a4ff7b85, inset 0 1px 0 #ffffff75, inset 0 -2px 5px #000a;
+}
+
+.division-johen-free-fire .monitor-frame {
+    border-color: #ffc1c1;
+    box-shadow: 0 1.5rem 4rem #560b1685, 0 0 0 .28rem #ff596357, 0 0 1.6rem #ff777785, inset 0 1px 0 #ffffff75, inset 0 -2px 5px #000a;
+}
+
+.division-johen-valorant .monitor-frame {
+    border-color: #4ee8ec;
+    box-shadow: 0 1.5rem 4rem #001d2785, 0 0 0 .28rem #19d9e457, 0 0 1.6rem #33e2e685, inset 0 1px 0 #ffffff75, inset 0 -2px 5px #000a;
+}
+
+.division-johen-e-football .monitor-frame {
+    border-color: #b9ccff;
+    box-shadow: 0 1.5rem 4rem #05105f99, 0 0 0 .28rem #5378ff6b, 0 0 1.6rem #668bff8c, inset 0 1px 0 #ffffff75, inset 0 -2px 5px #000a;
+}
+
+.monitor-screen {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    border: 1px solid #070b12;
+    border-radius: clamp(.35rem, .75vw, .7rem);
+    background: #000;
+    box-shadow: inset 0 0 0 1px #ffffff18;
+}
+
+.monitor-screen::after {
+    position: absolute;
+    right: .8rem;
+    bottom: .35rem;
+    width: .35rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #67d6b0;
+    box-shadow: 0 0 .55rem #67d6b0a6;
+    content: "";
+    pointer-events: none;
+}
+
+.monitor-neck {
+    width: clamp(3.5rem, 10vw, 8rem);
+    height: clamp(.8rem, 2.5vh, 1.6rem);
+    flex: 0 0 auto;
+    background: linear-gradient(90deg, #172233, #566174 48%, #263246);
+    clip-path: polygon(24% 0, 76% 0, 100% 100%, 0 100%);
+}
+
+.monitor-base {
+    width: clamp(7rem, 23vw, 18rem);
+    height: clamp(.35rem, .9vh, .65rem);
+    flex: 0 0 auto;
+    border: 1px solid #748095;
+    border-radius: 50% 50% .4rem .4rem / 100% 100% .4rem .4rem;
+    background: linear-gradient(180deg, #657187, #222d3f 70%);
+    box-shadow: 0 .45rem 1.2rem #0008;
+}
+
+.stock-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    border: 0;
+    background: #000;
+}
+
+.stock-video-error {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-items: center;
+    gap: .8rem;
+    padding: 1.5rem;
+    color: #f5f9ff;
+    background: #111827;
+    text-align: center;
+}
+
+.stock-video-error p { margin: 0; }
+.stock-video-error a { color: #aabfff; }
+
+
 .display-slide {
     position: relative;
     width: 100%;

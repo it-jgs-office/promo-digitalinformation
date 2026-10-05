@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\StockVideoController;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'app', ['page' => 'display'])->name('display');
+Route::get('/media/stocks/{stock}/video', StockVideoController::class)->name('stocks.video');
 
 Route::middleware('guest')->group(function (): void {
     Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -14,13 +16,9 @@ Route::middleware('guest')->group(function (): void {
 
 Route::middleware(['auth', EnsureUserIsAdmin::class])->group(function (): void {
     Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin/live-hosts', [AdminDashboardController::class, 'liveHostBoard'])->name('admin.live-hosts');
-    foreach (['promotions', 'achievements', 'birthdays', 'hosts', 'channels', 'weekly-meetings'] as $resource) {
-        Route::get('/admin/'.$resource.'/create', [AdminDashboardController::class, 'create'])->defaults('resource', $resource)->name('admin.'.$resource.'.create');
-        Route::get('/admin/'.$resource.'/{id}/edit', [AdminDashboardController::class, 'edit'])->whereNumber('id')->defaults('resource', $resource)->name('admin.'.$resource.'.edit');
-    }
-    Route::get('/admin/{section}', [AdminDashboardController::class, 'section'])
-        ->whereIn('section', ['promotions', 'achievements', 'live-hosts', 'birthdays', 'hosts', 'channels', 'weekly-meetings', 'display-preview'])
-        ->name('admin.section');
+    Route::get('/admin/stocks', [AdminDashboardController::class, 'stocks'])->name('admin.stocks');
+    Route::get('/admin/promotions', [AdminDashboardController::class, 'promotions'])->name('admin.promotions');
+    Route::get('/admin/promotions/create', [AdminDashboardController::class, 'createPromotion'])->name('admin.promotions.create');
+    Route::get('/admin/promotions/{promotion}/edit', [AdminDashboardController::class, 'editPromotion'])->whereNumber('promotion')->name('admin.promotions.edit');
     Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });

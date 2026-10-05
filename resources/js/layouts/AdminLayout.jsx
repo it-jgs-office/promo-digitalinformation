@@ -1,31 +1,6 @@
 ﻿import React from 'react';
 
-const groups = [
-    {
-        label: 'RINGKASAN',
-        links: [
-            ['Dashboard', '/admin'],
-            ['Preview Display', '/admin/display-preview'],
-        ],
-    },
-    {
-        label: 'KONTEN BOARD',
-        links: [
-            ['Info Promosi', '/admin/promotions'],
-            ['Achievement', '/admin/achievements'],
-            ['Birthday', '/admin/birthdays'],
-            ['Weekly Meeting', '/admin/weekly-meetings'],
-        ],
-    },
-    {
-        label: 'LIVE STREAMING',
-        links: [
-            ['Channel Live', '/admin/channels'],
-            ['Daftar Host', '/admin/hosts'],
-            ['Jadwal Host Live', '/admin/live-hosts'],
-        ],
-    },
-];
+const groups = [{ label: 'KATALOG', links: [['Stock', '/admin/stocks'], ['Promo', '/admin/promotions']] }];
 
 export default function AdminLayout({ title, children }) {
     const currentPath = window.location.pathname;
@@ -34,7 +9,7 @@ export default function AdminLayout({ title, children }) {
     return (
         <div className="cms-shell">
             <aside className="cms-sidebar">
-                <a className="cms-brand" href="/admin"><span className="cms-brand-mark">D</span><span>Digital Board<small>ADMIN CMS</small></span></a>
+                <a className="cms-brand" href="/admin"><span className="cms-brand-mark">D</span><span>Admin Panel<small>Promo Management System</small></span></a>
                 <nav aria-label="Navigasi admin">
                     {groups.map((group) => (
                         <div className="nav-group" key={group.label}>
